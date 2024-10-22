@@ -1,4 +1,4 @@
-CC = g++
+CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 TARGET = Phonebook
 SRC = main.cpp Phonebook.cpp Contact.cpp
