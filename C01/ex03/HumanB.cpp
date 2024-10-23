@@ -7,3 +7,11 @@ HumanB::HumanB() {
 HumanB::~HumanB() {
     // Destructor implementation
 }
+
+void HumanB::attack(){
+
+}
+
+void setWeapon(Weapon &weapon){
+	
+}

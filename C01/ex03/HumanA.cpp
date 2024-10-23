@@ -7,3 +7,7 @@ HumanA::HumanA() {
 HumanA::~HumanA() {
     // Destructor implementation
 }
+
+void HumanA::attack(){
+	
+}
