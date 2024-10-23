@@ -13,6 +13,7 @@
 #include "Phonebook.hpp"
 #include <unistd.h>
 #include <iostream>
+#include <cstdlib>
 
 int main(){
 
@@ -25,6 +26,8 @@ int main(){
     while (1){
         std::cout << GREEN "Wanna ADD, SEARCH or EXIT?" RESET << std::endl;
         std::getline(std::cin, input);
+		if (std::cin.eof())
+			exit (0);
         if (input.compare("EXIT") == 0){
             std::cout << "Bye, have a nice day!" << std::endl;
             sleep(2);

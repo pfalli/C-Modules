@@ -19,6 +19,7 @@
 
 #include "Contact.hpp"
 #include <iostream>
+#include <cstdlib>
 
 class Phonebook{
     private:

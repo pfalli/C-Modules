@@ -14,6 +14,7 @@
 #include "Contact.hpp"
 #include <iomanip>
 #include <unistd.h>
+#include <cstdlib>
 
 Phonebook::Phonebook(void){
     std::cout << "Costructor called" << std::endl;
@@ -49,6 +50,8 @@ void    Phonebook::display_contact(){
     while(flag == false){
         std::cout << "Enter the number of the contact you want to display: ";
         std::cin >> index;
+		if (std::cin.eof())
+			exit (0);
         if (std::cin.fail() || index < 1 || index > 8){
             std::cin.clear();
             std::cin.ignore(10000, '\n');

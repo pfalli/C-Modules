@@ -17,6 +17,7 @@
 #define GREEN "\033[0;32m"
 
 #include <string>
+#include <cstdlib>
 
 class Contact{
     private:
@@ -36,10 +37,10 @@ class Contact{
         std::string is_valid(std::string info, std::string str);
         void    showInfo();
         std::string printLen(std::string str) const;
+		std::string is_phonenumber(std::string info, std::string str);
+		bool isValidNumber(const std::string &str);
         
-            
-
-
 };
+
 
 #endif

@@ -13,6 +13,7 @@
 #include "Contact.hpp"
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 
 Contact::Contact(void){
     std::cout << "Costructor called" << std::endl;
@@ -22,7 +23,32 @@ Contact::~Contact(void){
     std::cout << "Decostructor called" << std::endl;
 }
 
+bool Contact::isValidNumber(const std::string &str) {
+	for (std::size_t i = 0; i < str.size(); ++i) {
+		if (!std::isdigit(str[i])) {
+			return false;
+		}
+	}
+	return true;
+}
 
+std::string Contact::is_phonenumber(std::string info, std::string str) {
+    bool valid = false;
+
+    while (valid == false){
+        std::cout << str;
+        std::getline(std::cin, info);
+		if (std::cin.eof())
+			exit (0);
+        if (std::cin.good() && !info.empty() && isValidNumber(info) == true)
+            valid = true;
+        else{
+            std::cin.clear();
+            std::cout << "❌  Phone accept only numbers. Try again." << std::endl;
+        }
+    }
+    return (info);
+}
 
 
 std::string Contact::is_valid(std::string info, std::string str) {
@@ -31,11 +57,13 @@ std::string Contact::is_valid(std::string info, std::string str) {
     while (valid == false){
         std::cout << str;
         std::getline(std::cin, info);
+		if (std::cin.eof())
+			exit (0);
         if (std::cin.good() && !info.empty())
             valid = true;
         else{
             std::cin.clear();
-            std::cout << "❌  Invalid input; please try again." << std::endl;
+            std::cout << "❌  Invalid input. Try again." << std::endl;
         }
     }
     return (info);
@@ -49,7 +77,7 @@ void Contact::addInfo(int current_num){
     this->_firstName = is_valid(input, "First Name:  " );
     this->_lastName = is_valid(input, "Last Name:  " );
     this->_nickname = is_valid(input, "Nickname:  " );
-    this->_phoneNumber = is_valid(input, "Phone Number:  " );
+    this->_phoneNumber = is_phonenumber(input, "Phone Number:  " );
     this->_darkestSecrets = is_valid(input, "Darkest Secrets:  " );
     this->_index = current_num;
     std::cout << "✅  Contact added to Phonebook!\n" << std::endl;

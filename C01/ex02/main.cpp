@@ -6,33 +6,23 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:12:46 by pfalli            #+#    #+#             */
-/*   Updated: 2024/10/23 15:14:01 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/10/23 16:01:33 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-
+#include <iostream>
 
 int main(){
-	std::string name;
-	std::cout << "give name of Zombie1: ";
-	std::cin >> name;
+	std::string string = "HI THIS IS BRAIN";
+	std::string *stringPtr = &string;
+	std::string &stringRef = string;
 
-	Zombie zombie;
-	zombie.setName(name);
-	zombie.announce();
+	std::cout << "Memory address string: " << &string << std::endl;
+	std::cout << "Memory address stringPtr: " << stringPtr << std::endl;
+	std::cout << "Memory address stringRef: " << &stringRef << std::endl;
 
-	std::cout << "give name of newZombie(HEAP): ";
-	std::cin >> name;
-
-	Zombie *zombie2 = newZombie(name);
-	zombie2->announce();
-
-	std::cout << "give name of randomChump(STACK): ";
-	std::cin >> name;
-
-	randomChump(name);
-
-	delete zombie2;
+	std::cout << "Value string: " << string << std::endl;
+	std::cout << "Value stringPtr: " << *stringPtr << std::endl;
+	std::cout << "Value stringRef: " << stringRef << std::endl;
 	return 0;
 }
