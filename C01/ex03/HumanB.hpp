@@ -11,7 +11,8 @@ public:
 	void setWeapon(Weapon &weapon);
 
 private:
-    Weapon &weapon;
+    Weapon* _weapon; // pointer
+    std::string _name;
 
 };
 

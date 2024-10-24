@@ -1,7 +1,7 @@
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-TARGET = attack
-SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+TARGET = main
+SRC = main.cpp Sed.cpp
 OBJS = $(SRC:.cpp=.o)
 
 all: $(TARGET)

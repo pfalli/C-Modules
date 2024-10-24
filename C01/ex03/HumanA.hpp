@@ -10,7 +10,8 @@ public:
 	void attack();
 
 private:
-    Weapon *weapon;
+    Weapon& _weapon;
+    std::string _name;
 };
 
 #endif // HUMANA_HPP

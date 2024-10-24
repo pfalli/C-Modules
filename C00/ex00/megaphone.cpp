@@ -16,7 +16,8 @@
 
 bool isNumber(const char* str) {
 	for (int i = 0; str[i] != '\0'; i++) {
-		if (!std::isdigit(str[i])) return false;
+		if (!std::isdigit(str[i]))
+			return false;
 	}
 	return true;
 }
