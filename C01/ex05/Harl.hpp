@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sed.hpp                                            :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 16:29:33 by pfalli            #+#    #+#             */
-/*   Updated: 2024/10/24 16:29:33 by pfalli           ###   ########.fr       */
+/*   Created: 2024/10/25 11:06:14 by pfalli            #+#    #+#             */
+/*   Updated: 2024/10/25 11:06:14 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SED_HPP
-#define SED_HPP
+#ifndef HARL_HPP
+    #define HARL_HPP
 
 #include <iostream>
 #include <string>
-#include <fstream>
-#include <cstdlib>
 
-class Sed
-{
-    private:
-        std::string _inFile;
-        std::string _outFile;
-
+class Harl {
     public:
-        Sed(std::string filename);
-        ~Sed();
-        void    replace( std::string s1, std::string s2);
+        Harl();
+        ~Harl();
+        void    complain( std::string level );
+
+    private:
+        void    _debug(void);
+        void    _info(void);
+        void    _warning(void);
+        void    _error(void);
+
 };
 
-#endif // SED_HPP
+#endif

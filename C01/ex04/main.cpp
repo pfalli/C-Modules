@@ -11,16 +11,14 @@
 /* ************************************************************************** */
 
 #include "Sed.hpp"
-#include <iostream>
-#include <string>
-#include <fstream>
 
 int main ( int ac, char **av )
 {
     if (ac != 4) {
-        std::cerr << "Usage: ./SedV2 <filename> <to_find> <replace>." << std::endl;
+        std::cout << "Usage: ./main [filename] [s1] [s2]." << std::endl;
         return 1;
-    } else {
+    }
+    else {
         Sed   sed2(av[1]);
         sed2.replace(av[2], av[3]);
     }

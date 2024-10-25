@@ -21,27 +21,27 @@ Sed::~Sed() {
 }
 
 
-void            Sed::replace( std::string toFind, std::string replace) {
-    std::ifstream   ifs(this->_inFile);
-    if (ifs.is_open()) {
+void Sed::replace(std::string oldstr, std::string newstr) {
+    std::ifstream ifs(this->_inFile.c_str()); // ifstream need a const string READ
+    if (!ifs.is_open()) { // boolean
+        std::cerr << "Error opening file: " << this->_inFile << std::endl;
+        exit(1);
+    }
+    else {
         std::string content;
-        if (std::getline(ifs, content, '\0')) {
-            std::ofstream   ofs(this->_outFile);
-            size_t          pos = content.find(toFind);
-            while ( pos != std::string::npos ) {
-                content.erase(pos, toFind.length());
-                content.insert(pos, replace);
-                pos = content.find(toFind);
+        if (std::getline(ifs, content, '\0')) { // delimiter
+            std::ofstream ofs(this->_outFile.c_str()); // ofstream need a const string WRITE
+            size_t pos = content.find(oldstr);
+            while (pos != std::string::npos) {
+                content.erase(pos, oldstr.length());
+                content.insert(pos, newstr);
+                pos = content.find(oldstr); // it's needed to continue searching other words or "string"
             }
-            ofs << content;
+            ofs << content; // write
             ofs.close();
-        }
-        else {
+        } else {
             std::cerr << "Empty file found." << std::endl;
         }
         ifs.close();
-    } else {
-        std::cerr << "Unable to open the file." << std::endl;
-        exit(0);
-    }
+    } 
 }
