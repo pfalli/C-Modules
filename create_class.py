@@ -8,26 +8,46 @@ def create_class_files(class_name):
 #define {class_name.upper()}_HPP
 
 class {class_name} {{
-public:
-    {class_name}();
-    ~{class_name}();
+	private:
+	    // Add your private members here
 
-private:
-    // Add your private members here
+	public:
+	    {class_name}();
+		{class_name}(const {class_name}& other);
+        {class_name} &operator=(const {class_name} &other);
+	    ~{class_name}();
+	
 }};
 
-#endif // {class_name.upper()}_HPP
+#endif //
 """
 
     # Create source file content
     source_content = f"""#include "{class_name}.hpp"
 
 {class_name}::{class_name}() {{
-    // Constructor implementation
+    std::cout << "Default constructor called" << std::endl;
+    return ;
 }}
 
+
+{class_name}::{class_name}(const {class_name} &other) {
+    std::cout << "Copy constructor called" << std::endl;
+    (void) other;
+    return ;
+}
+
+
+{class_name} &{class_name}::operator=(const {class_name} &other) {
+    std::cout << "Assignment operator called" << std::endl;
+    (void) other;
+    return (*this);
+}
+
+
 {class_name}::~{class_name}() {{
-    // Destructor implementation
+    std::cout << "Default deconstructor called" << std::endl;
+    return ;
 }}
 """
 

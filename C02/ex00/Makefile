@@ -1,7 +1,7 @@
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 TARGET = main
-SRC = main.cpp
+SRC = main.cpp Fixed.cpp
 OBJS = $(SRC:.cpp=.o)
 
 all: $(TARGET)
