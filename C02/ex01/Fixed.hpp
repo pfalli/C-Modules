@@ -6,7 +6,7 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 17:37:05 by pfalli            #+#    #+#             */
-/*   Updated: 2024/10/28 16:20:23 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/10/28 16:58:59 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,25 @@
 
 class Fixed{
     public:
-        Fixed(); // initialize a class
-        Fixed(const Fixed &ex); // initialize a copy of a class
-        Fixed &operator=(const Fixed &ex); // assign an arguemnt of an object to another object
-        ~Fixed(); // deconstructor
+		Fixed();
+        Fixed(const int num);
+		Fixed(const float num);
+		Fixed(const Fixed &ex);
+        Fixed &operator=(const Fixed &ex);
+        ~Fixed();
 
-        int getRawBits( void ) const; // getter
-        void setRawBits( int const raw ); // setter
+        int getRawBits( void ) const;
+        void setRawBits( int const raw );
+		float toFloat( void ) const;
+		int toInt( void ) const;
 
     private:
-        int _fixedPoint; // fixed point number
-        static const int _fractionalBits = 8;
+        int _value;
+        static const int _bits = 8;
 
 };
+
+// overload the << operator
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 
 #endif

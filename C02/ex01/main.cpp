@@ -6,33 +6,30 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 17:36:32 by pfalli            #+#    #+#             */
-/*   Updated: 2024/10/28 16:21:07 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/10/28 17:02:20 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-/* this project is a demostartion of how to create "fixed classes"
- that we declare already inside the constructors*/
+/* this project is about creating some member fucntions 
+that inside the costructors will convert the INT ot FLOAT or opposite*/
 
 int main( void ) {
-    Fixed a;
-	// a.setRawBits(42);
-    Fixed b( a );
-    Fixed c;
+	Fixed a;
+	Fixed const b( 10 );
+	Fixed const c( 42.42f );
+	Fixed const d( b );
 
-    c = b; // copying assignment operator
-
-	// a.setRawBits(42);
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
-    // a.setRawBits(100);
-    // b.setRawBits(-42);
-    // c.setRawBits(5);
-    // std::cout << a.getRawBits() << std::endl;
-    // std::cout << b.getRawBits() << std::endl;
-    // std::cout << c.getRawBits() << std::endl;
-    return 0;
+	a = Fixed( 1234.4321f );
+	
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	// std::cout << "c is " << c << std::endl;
+	// std::cout << "d is " << d << std::endl;
+	
+	// std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	// std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	// std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	// std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	return 0;
 }
-
