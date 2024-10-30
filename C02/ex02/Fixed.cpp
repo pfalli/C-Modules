@@ -6,13 +6,15 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 17:38:44 by pfalli            #+#    #+#             */
-/*   Updated: 2024/10/30 13:47:02 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/10/30 14:58:23 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-//----------CONSTRUCTORS----------------------------------
+//---------------------------------------------------------
+//-                   CONSTRUCTORS                        -
+//---------------------------------------------------------
 
 Fixed::Fixed()
 {
@@ -49,7 +51,9 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
-// --------FUNCTIONS------------------------------------------------
+//---------------------------------------------------------
+//-                   FUNCTIONS                           -
+//---------------------------------------------------------
 
 int Fixed::getRawBits( void ) const
 {
@@ -93,4 +97,17 @@ std::ostream &operator<<(std::ostream &os, const Fixed &other)
 {
     os << other.toFloat();
     return(os);
+}
+
+//---------------------------------------------------------
+//-              OPERATORS OVERLOAD                       -
+//---------------------------------------------------------
+
+
+bool Fixed::operator<(const Fixed &other) const {
+	return this->_value < other._value;
+}
+
+bool Fixed::operator>(const Fixed &other) const {
+	return this->_value > other._value;
 }

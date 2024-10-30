@@ -6,7 +6,7 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 17:36:32 by pfalli            #+#    #+#             */
-/*   Updated: 2024/10/30 13:07:08 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/10/30 14:25:30 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,15 @@ int main( void ) {
 	std::cout << a.getRawBits() << std::endl;
 	std::cout << "a is "<< a << std::endl;
 	std::cout << a.getRawBits() << std::endl;
-	
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "a is " << a.toFloat() << " as float" << std::endl;
+	std::cout << std::endl;
+
+	a = Fixed( 1234.4321f );
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << "a is "<< a << std::endl;
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "a is " << a.toFloat() << " as float" << std::endl;
+
 	return 0;
 }

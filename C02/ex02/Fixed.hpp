@@ -6,7 +6,7 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 17:37:05 by pfalli            #+#    #+#             */
-/*   Updated: 2024/10/30 14:21:00 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/10/30 15:00:52 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,20 @@ class Fixed{
 		float toFloat( void ) const;
 		int toInt( void ) const;
 
-    private:
-        int _value; // --> used to store the fixed-point representation
-        static const int _bits = 8;
+	private:
+		int _value; // --> used to store the fixed-point representation
+		static const int _bits = 8;
 
+	bool operator<(const Fixed &other) const;
+	bool operator>(const Fixed &other) const;
+	bool operator>=(const Fixed &other) const;
+	bool operator<=(const Fixed &other) const;
+	bool operator==(const Fixed &other) const;
+	bool operator!=(const Fixed &other) const;
+	Fixed operator+(const Fixed &other) const;
+	Fixed operator*(const Fixed &other) const;
+	Fixed operator-(const Fixed &other) const;
+	Fixed operator/(const Fixed &other) const;
 };
-
-// overload the << operator
-std::ostream &operator<<(std::ostream &os, const Fixed &other);
 
 #endif
