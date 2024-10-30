@@ -6,7 +6,7 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 17:38:44 by pfalli            #+#    #+#             */
-/*   Updated: 2024/10/29 18:22:58 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/10/30 13:04:17 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ Fixed::Fixed()
 
 Fixed::Fixed(const int num){
 	std::cout << "Int constructor called" << std::endl;
-	this->_value = num;
+	this->_value = num << _bits;; // to convert the integer value to a fixed-point representation.
 }
 
 Fixed::Fixed(const float num){
 	std::cout << "Float constructor called" << std::endl;
-	this->_value = num;
+	this->_value = roundf(num * (1 << _bits)); // to convert the floating-point value to a fixed-point representation.
 }
 
 Fixed::Fixed(const Fixed& ex) : _value(ex._value)
@@ -35,14 +35,13 @@ Fixed::Fixed(const Fixed& ex) : _value(ex._value)
 	return ;
 }
 
-/* The assignment operator is used to copy the value from
-	one object to another, and it is implemented by overloading the
-	assignment operator (=).*/
 Fixed &Fixed::operator=(const Fixed &ex)// assignment operator
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->_value = ex._value;
-	return (*this);
+	if (this != &ex) { // Check for self-assignment: This checks if the current object is not the same as the object being assigned.
+		this->_value = ex._value;
+	}
+	return (*this); // This allows the assignment operator to be used in a chain of assignments.
 }
 
 Fixed::~Fixed()
@@ -60,24 +59,36 @@ int Fixed::getRawBits( void ) const
 
 void Fixed::setRawBits( int const raw )
 {
-	std::cout << "setRawBits member function called" << std::endl;
+	std::cout << "setRawBits member function called -->"<< raw << std::endl;
 	this->_value = raw;
 }
 
-float Fixed::toFloat( void ) const
+float Fixed::toFloat()const
 {
-	return (this->_value);
+	float val = this->_value;
+	
+	// end calculates the value of end 
+	// by shifting 1 to the left 
+	// by the number of bits stored in the bits attribute.
+	int end = 1 << _bits;
+	// converting the fixed-point value to a floating-point value
+	val = val / end;
+	return(val);
 }
 
-int Fixed::toInt( void ) const
+int Fixed::toInt()const
 {
-	int result = (int)roundf(this->_value);
+	int val = this->_value;
 
-	return result;
+	// it shifts the bits of val to the right
+	// by the number of bits stored in the bits attribute
+	// converting the fixed-point value to an integer value
+	int intVal = val >> _bits;
+	return(intVal);
 }
 
-//  allowing custom objects to be printed directly using std::cout or other output streams
-// With this overload, you can directly use std::cout << v1 to print a Vector object.
+/*  allowing custom objects to be printed directly using std::cout or other output streams
+ With this overload, you can directly use std::cout << v1 to print a Vector object */
 std::ostream &operator<<(std::ostream &os, const Fixed &other)
 {
     os << other.toFloat();

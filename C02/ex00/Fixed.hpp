@@ -6,7 +6,7 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 17:37:05 by pfalli            #+#    #+#             */
-/*   Updated: 2024/10/28 16:20:23 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/10/30 12:40:48 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Fixed{
     public:
         Fixed(); // initialize a class
         Fixed(const Fixed &ex); // initialize a copy of a class
-        Fixed &operator=(const Fixed &ex); // assign an arguemnt of an object to another object
+        Fixed &operator=(const Fixed &ex); // assignement operator
         ~Fixed(); // deconstructor
 
         int getRawBits( void ) const; // getter
