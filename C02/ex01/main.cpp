@@ -6,7 +6,7 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 17:36:32 by pfalli            #+#    #+#             */
-/*   Updated: 2024/10/28 17:02:20 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/10/29 14:22:45 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main( void ) {
 	
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
-	// std::cout << "c is " << c << std::endl;
+	std::cout << "c is " << c << std::endl;
 	// std::cout << "d is " << d << std::endl;
 	
 	// std::cout << "a is " << a.toInt() << " as integer" << std::endl;

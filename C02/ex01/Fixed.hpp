@@ -6,7 +6,7 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 17:37:05 by pfalli            #+#    #+#             */
-/*   Updated: 2024/10/28 16:58:59 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/10/29 18:24:54 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <cmath>
 
 class Fixed{
     public:
@@ -37,6 +38,6 @@ class Fixed{
 };
 
 // overload the << operator
-std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
+std::ostream &operator<<(std::ostream &os, const Fixed &other);
 
 #endif
