@@ -10,21 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-
-	std::cout << a << "--> value" << std::endl;
-	std::cout << ++a << "--> pre-increment" << std::endl;
-	std::cout << a << "--> value" << std::endl;
-	std::cout << a++ << "--> post-increment" <<std::endl;
-	std::cout << a << "--> value" <<  std::endl;
-	
-	std::cout << b << "--> moltiplication *" << std::endl;
-	
-	std::cout << Fixed::max( a, b ) << std::endl;
-
-	return 0;
+	FragTrap Tody("Tody");
+	FragTrap Jack("Jack");
+	Tody.showInfo();
+	Jack.showInfo();
+	Tody.attack("Jack");
+	Jack.takeDamage(2);
+	Tody.highFivesGuys();
+	Jack.attack("Tody");
+	Tody.takeDamage(5);
+	Tody.beRepaired(10);
+	Tody.showInfo();
+	Jack.showInfo();
+	Tody.highFivesGuys();
+	Jack.highFivesGuys();
 }

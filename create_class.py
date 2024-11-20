@@ -7,6 +7,9 @@ def create_class_files(class_name):
     header_content = f"""#ifndef {class_name.upper()}_HPP
 #define {class_name.upper()}_HPP
 
+#include <iostream>
+#include <string>
+
 class {class_name} {{
 	private:
 	    // Add your private members here
@@ -31,24 +34,29 @@ class {class_name} {{
 }}
 
 
-{class_name}::{class_name}(const {class_name} &other) {
+{class_name}::{class_name}(const {class_name} &other) {{
     std::cout << "Copy constructor called" << std::endl;
     (void) other;
     return ;
-}
+}}
 
 
-{class_name} &{class_name}::operator=(const {class_name} &other) {
+{class_name} &{class_name}::operator=(const {class_name} &other) {{
     std::cout << "Assignment operator called" << std::endl;
     (void) other;
     return (*this);
-}
+}}
 
 
 {class_name}::~{class_name}() {{
     std::cout << "Default deconstructor called" << std::endl;
     return ;
 }}
+
+//-----------------------------------------------------
+//               FUNCTIONS
+//----------------------------------------------------
+
 """
 
     # Write header file

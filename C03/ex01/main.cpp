@@ -10,21 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-
-	std::cout << a << "--> value" << std::endl;
-	std::cout << ++a << "--> pre-increment" << std::endl;
-	std::cout << a << "--> value" << std::endl;
-	std::cout << a++ << "--> post-increment" <<std::endl;
-	std::cout << a << "--> value" <<  std::endl;
-	
-	std::cout << b << "--> moltiplication *" << std::endl;
-	
-	std::cout << Fixed::max( a, b ) << std::endl;
-
-	return 0;
+	ScavTrap Marta("Marta");
+	ScavTrap Roberta("Roberta");
+	Marta.showInfo();
+	Roberta.showInfo();
+	Marta.attack("Roberta");
+	Roberta.takeDamage(2);
+	Marta.guardGate();
+	Roberta.attack("Marta");
+	Marta.takeDamage(5);
+	Marta.beRepaired(10);
+	Marta.showInfo();
+	Roberta.showInfo();
 }
