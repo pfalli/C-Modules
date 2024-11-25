@@ -6,13 +6,13 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:29:40 by pfalli            #+#    #+#             */
-/*   Updated: 2024/10/24 16:29:40 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/11/25 18:55:36 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
 
-Sed::Sed(std::string filename) : _inFile(filename){
+Sed::Sed(std::string filename) : _inFile(filename){ // initializer list
     this->_outFile = this->_inFile + ".replace";
 }
 
