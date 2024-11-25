@@ -72,3 +72,9 @@ In this example:
     When calling the function, (person.*funcPtr)(), the pointer is used with an instance of Harl (person) to execute _debug() in the context of that specific instance.
 
 This distinction between type reference (for member function pointers) and memory allocation (for static data members) is why the former is allowed in main while the latter is not.
+
+## Polymorphism
+
+there is a base class (example: Animal class)
+i can now create derived classes to the base class (example: class Dog: public Animal )
+now the derived classes can use fucntions of the base class, but the functions have to be "virtual"

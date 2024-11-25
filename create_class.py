@@ -49,7 +49,7 @@ class {class_name} {{
 
 
 {class_name}::~{class_name}() {{
-    std::cout << "Default deconstructor called" << std::endl;
+    std::cout << "Default destructor called" << std::endl;
     return ;
 }}
 
