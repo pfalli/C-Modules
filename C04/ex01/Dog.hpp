@@ -4,10 +4,12 @@
 #include <iostream>
 #include <string>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal {
 	private:
 		std::string type;
+		Brain	*brain;
 
 	public:
 	    Dog();
@@ -17,6 +19,7 @@ class Dog : public Animal {
 
 		void makeSound() const; // override would be more readable and useful, but it's not mandatory
 	    std::string getType() const;
+		Brain	*getBrain(void) const;
 	
 };
 

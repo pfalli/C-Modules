@@ -5,14 +5,18 @@
 #include <string>
 
 class Brain {
-	protected:
-	    std::string ideas[100];
+	private:
+	    std::string *idea;
+		int size;
 
 	public:
 	    Brain();
-	    virtual ~Brain();
+		Brain(const Brain &other);
+		Brain &operator=(const Brain &other);
+	    ~Brain();
 
-		void new_idea(std::string idea);
+		std::string getIdea(unsigned int index) const;
+		void addIdea(std::string idea);
 };
 
 #endif //

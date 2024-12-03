@@ -16,36 +16,47 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-// int main()
-// {
-//     const Animal* meta = new Animal();
-//     const Animal* j = new Dog(); // polymorphism, it uses the pointer to point to a derived class
-//     const Animal* i = new Cat();
+int main()
+{
+    const Animal* meta = new Animal();
+    const Animal* j = new Dog(); // polymorphism, it uses the pointer to point to a derived class
+    const Animal* i = new Cat();
+    const WrongAnimal* z = new WrongCat();
 
-//     std::cout << j->getType() << " " <<  std::endl; // so the j->getType() will call the overridden methods in the Dog class.
-//     std::cout << i->getType() << " " << std::endl;
-//     i->makeSound(); // cat sound
-//     j->makeSound(); // dog sound
-//     meta->makeSound();
+    std::cout << j->getType() << " " <<  std::endl; // so the j->getType() will call the overridden methods in the Dog class.
+    std::cout << i->getType() << " " << std::endl;
+    i->makeSound(); // cat sound
+    j->makeSound(); // dog sound
+    meta->makeSound();
 
-//     delete meta;
-//     delete j;
-//     delete i;
-//     return 0;
-// }
+    std::cout << z->getType() << " " << std::endl;
+    z->makeSound(); // bird sound
 
-int main() {
-    const WrongAnimal* elephant = new WrongAnimal();
-    const WrongAnimal* mouse = new WrongCat();
+    const Dog* originalDog = new Dog();
+    const Dog* copiedDog = new Dog(*originalDog);
+    std::cout << copiedDog->getType() << " " << std::endl;
+    copiedDog->makeSound();
 
-    std::cout << elephant->getType() << " " <<  std::endl;
-    std::cout << mouse->getType() << " " <<  std::endl;
-    elephant->makeSound();
-    mouse->makeSound();
 
-    delete elephant;
-    delete mouse;
-
+    delete meta;
+    delete j;
+    delete i;
+    delete z;
     return 0;
-
 }
+
+// int main() {
+//     const WrongAnimal* elephant = new WrongAnimal();
+//     const WrongAnimal* mouse = new WrongCat();
+
+//     std::cout << elephant->getType() << " " <<  std::endl;
+//     std::cout << mouse->getType() << " " <<  std::endl;
+//     elephant->makeSound();
+//     mouse->makeSound();
+
+//     delete elephant;
+//     delete mouse;
+
+//     return 0;
+
+// }

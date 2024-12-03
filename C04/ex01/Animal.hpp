@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include "Brain.hpp"
 
 //Function Overriding with Virtual Functions
 /* Derived classes can override functions of the base class. When a pointer or reference 
@@ -15,11 +16,13 @@ class Animal {
 
 	public:
 		Animal();
+		Animal(const Animal &other);
+		virtual Animal &operator=(const Animal &other);
 	    virtual ~Animal();
 
 		virtual void makeSound() const;
         virtual std::string getType() const;
-	
+		virtual Brain *getBrain(void) const = 0;
 };
 
 #endif //

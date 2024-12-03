@@ -3,13 +3,31 @@
 
 Dog::Dog() : Animal() {
     this->type = "Dog";
+    this->brain = new Brain;
     std::cout << "Dog constructor called" << std::endl;
     return ;
 }
 
+Dog::Dog(const Dog &other) : Animal(other){{
+    std::cout << "Copy constructor called" << std::endl;
+    this->type = other.type;
+    return ;
+}}
+
+
+Dog &Dog::operator=(const Dog &other) {{
+    std::cout << "Assignment operator called" << std::endl;
+    if (this != &other) {
+        Animal::operator=(other);
+        this->type = other.type;
+    }
+    return *this;
+}}
+
 
 Dog::~Dog() {
     std::cout << "Dog deconstructor called" << std::endl;
+    delete this->brain;
     return ;
 }
 
@@ -23,4 +41,9 @@ void Dog::makeSound() const {
 
 std::string Dog::getType() const {
     return (this->type);
+}
+
+Brain*	Dog::getBrain(void) const
+{
+	return (this->brain);
 }

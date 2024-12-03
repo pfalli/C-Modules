@@ -6,6 +6,19 @@ Animal::Animal() {
     return ;
 }
 
+Animal::Animal(const Animal &other) {{
+    std::cout << "Copy constructor called" << std::endl;
+    this->type = other.type;
+    return ;
+}}
+
+
+Animal &Animal::operator=(const Animal &other) {{
+    std::cout << "Assignment operator called" << std::endl;
+    this->type = other.type;
+    return *this;
+}}
+
 Animal::~Animal() {
     std::cout << "Animal destructor called" << std::endl;
     return ;

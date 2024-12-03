@@ -11,9 +11,11 @@ class Cat : public Animal {
 
 	public:
 	    Cat();
+		Cat(const Cat &other);
+		Cat &operator=(const Cat &other);
 	    ~Cat();
 
-		void makeSound() const; // override would be more readable and useful, but it's not mandatory
+		void makeSound() const; // "const override" would be more readable and useful, but it's not mandatory
 		std::string getType() const;
 	
 };
