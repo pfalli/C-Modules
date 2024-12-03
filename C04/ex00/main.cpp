@@ -15,6 +15,9 @@
 #include "Dog.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
+#define RESET   "\033[0m"
+#define RED     "\033[31m"
+#define GREEN   "\033[32m"
 
 int main()
 {
@@ -23,19 +26,26 @@ int main()
     const Animal* i = new Cat();
     const WrongAnimal* z = new WrongCat();
 
-    std::cout << j->getType() << " " <<  std::endl; // so the j->getType() will call the overridden methods in the Dog class.
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); // cat sound
-    j->makeSound(); // dog sound
+	std::cout << std::endl;
+    std::cout << j->getType() << " getType of" <<  std::endl; // so the j->getType() will call the overridden methods in the Dog class.
+    std::cout << i->getType() << " getType of" << std::endl;
+	std::cout << std::endl;
+    i->makeSound();
+    j->makeSound();
+	std::cout << std::endl;
     meta->makeSound();
+	std::cout << std::endl;
 
-    std::cout << z->getType() << " " << std::endl;
+	std::cout << GREEN "Testing Wrong Animal\n" RESET << std::endl;
+    std::cout << z->getType() << " getType of" << std::endl;
     z->makeSound(); // bird sound
 
+	std::cout << GREEN "\nTesting copy animal\n" RESET << std::endl;
     const Dog* originalDog = new Dog();
     const Dog* copiedDog = new Dog(*originalDog);
-    std::cout << copiedDog->getType() << " " << std::endl;
+    std::cout << copiedDog->getType() << " getType of" << std::endl;
     copiedDog->makeSound();
+	std::cout << std::endl;
 
 
     delete meta;

@@ -23,6 +23,11 @@ int main( void ) {
 	std::cout << a << "--> value" <<  std::endl;
 	
 	std::cout << b << "--> moltiplication *" << std::endl;
+
+	if(a < b)
+		std::cout <<  "< operator "  << a << std::endl;
+	else
+		std::cout << b << std::endl;
 	
 	std::cout << Fixed::max( a, b ) << std::endl;
 

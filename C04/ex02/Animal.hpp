@@ -17,10 +17,11 @@ class Animal {
 	public:
 		Animal();
 		Animal(const Animal &other);
-		virtual Animal &operator=(const Animal &other);
+		Animal &operator=(const Animal &other);
 	    virtual ~Animal();
 
-		virtual void makeSound() const;
-        virtual std::string getType() const;};
+		virtual void makeSound() const = 0; // Pure virtual function. Since it's 0 it cannot be instantiated directly, but from the derived classes
+        virtual std::string getType() const;
+};
 
 #endif //
