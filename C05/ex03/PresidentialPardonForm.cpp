@@ -1,7 +1,7 @@
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(){
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "PresidentialPardonForm Default constructor called" << std::endl;
 }
 
 // PresidentialPardonForm::PresidentialPardonForm()
@@ -12,19 +12,19 @@ PresidentialPardonForm::PresidentialPardonForm(){
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string& target) 
     : Form( target, 25, 5), _target( target ) {
-    std::cout << "Target constructor called: " << getName() <<  std::endl;
+    std::cout << "PresidentialPardonForm Target constructor called: " << getName() <<  std::endl;
 }
 
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other) 
     : Form(other), _target( other._target ) {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "PresidentialPardonForm Copy constructor called" << std::endl;
     return ;
 }
 
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &other) {
-    std::cout << "Assignment operator called" << std::endl;
+    std::cout << "PresidentialPardonForm Assignment operator called" << std::endl;
     if (this != &other) {
         _signed = other._signed;
         // _name, _gradeSign, and _gradeExec are const and cannot be assigned
@@ -34,7 +34,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 
 
 PresidentialPardonForm::~PresidentialPardonForm() {
-    std::cout << "Default destructor called" << std::endl;
+    std::cout << "PresidentialPardonForm destructor called" << std::endl;
     return ;
 }
 

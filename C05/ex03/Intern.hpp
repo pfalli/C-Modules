@@ -20,4 +20,4 @@ class Intern {
 	
 };
 
-#endif
+#endif // INTERN_HPP

@@ -4,14 +4,14 @@
 Form::Form() 
     : _name(""), _signed(false), _gradeSign(0), _gradeExec(0) {
         
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "Form Default constructor called" << std::endl;
     return ;
 }
 
 Form::Form(const std::string name, int gradeSign, int gradeExec)
     : _name(name), _signed(false), _gradeSign(gradeSign), _gradeExec(gradeExec) {
 
-    std::cout << "Name constructor called" << std::endl;
+    std::cout << "Form Name constructor called" << std::endl;
     if (gradeSign < 1 || gradeExec < 1)
         throw Form::GradeTooHighException();
     if (gradeSign > 150 || gradeExec > 150)
@@ -23,13 +23,13 @@ Form::Form(const std::string name, int gradeSign, int gradeExec)
 Form::Form(const Form &other)
     : _name(other._name), _signed(false), _gradeSign(other._gradeSign), _gradeExec(other._gradeExec) {
 
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Form Copy constructor called" << std::endl;
     return ;
 }
 
 
 Form &Form::operator=(const Form &other) {
-    std::cout << "Assignment operator called" << std::endl;
+    std::cout << "Form Assignment operator called" << std::endl;
     if (this != &other) {
         _signed = other._signed;
         // _name, _gradeSign, and _gradeExec are const and cannot be assigned
@@ -39,7 +39,7 @@ Form &Form::operator=(const Form &other) {
 
 
 Form::~Form() {
-    std::cout << "Virtual destructor called" << std::endl;
+    std::cout << "Form Virtual destructor called" << std::endl;
     return ;
 }
 

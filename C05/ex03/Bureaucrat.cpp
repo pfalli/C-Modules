@@ -2,12 +2,12 @@
 #include "Form.hpp"
 
 Bureaucrat::Bureaucrat() {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "Bureaucrat Default constructor called" << std::endl;
     return ;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name), _grade(grade) {
-    std::cout << "Name constructor called" << std::endl;
+    std::cout << "Bureaucrat Name constructor called" << std::endl;
     if (grade < 1)
         throw GradeTooHighException();
     if (grade > 150)
@@ -17,13 +17,13 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name), _grade(
 
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(other._grade){
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Bureaucrat Copy constructor called" << std::endl;
     return ;
 }
 
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other) {
-    std::cout << "Assignment operator called" << std::endl;
+    std::cout << "Bureaucrat Assignment operator called" << std::endl;
     if ( this != &other )
         _grade = other.getGrade();
     return *this;
@@ -31,7 +31,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other) {
 
 
 Bureaucrat::~Bureaucrat() {
-    std::cout << "Default destructor called" << std::endl;
+    std::cout << "Bureaucrat destructor called" << std::endl;
     return ;
 }
 
