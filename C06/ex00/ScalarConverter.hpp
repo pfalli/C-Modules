@@ -6,6 +6,7 @@
 #include <sstream>
 #include <iomanip>
 #include <climits>
+#include <algorithm>
 
 # define FALSE 1;
 # define INT 2;
