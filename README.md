@@ -1,80 +1,82 @@
-# C-Modules
-Modules of C++ projects 42 School
+# C++ Modules at 42 School
 
+## Overview
 
-## Resources
-For an initial idea of a OOP is (read fast): https://www.techtarget.com/searchapparchitecture/definition/object-oriented-programming-OOP 
+The C++ modules at 42 School are designed to provide a deep understanding of C++ programming, covering both fundamental and advanced concepts. This README summarizes the key topics and lessons learned throughout the modules.
 
-Nice Beginner Video: https://www.youtube.com/watch?v=-TkoO8Z07hI
+## Module Summaries
 
-We are allowed to use C++98 Standards, here the list of Libraries: https://www.geeksforgeeks.org/cpp-98-standard/
+### C++ Module 00: Basics of C++
 
-I found this c++ tutorial very well explained for difficult topics: https://www.learncpp.com/cpp-tutorial/introduction-to-object-oriented-programming/
+- **Introduction to C++**: Understanding the syntax and structure of C++ programs.
+- **Data Types**: Primitive data types, variables, and constants.
+- **Operators**: Arithmetic, relational, logical, and bitwise operators.
+- **Control Structures**: Conditional statements (`if`, `else`, `switch`) and loops (`for`, `while`, `do-while`).
+- **Functions**: Function declaration, definition, and overloading.
+- **Namespaces**: Using namespaces to avoid name conflicts.
 
-C00:
-test: ex00:
-1. check if char are already big;
-2. check Numbers
-test: ex01: 
-1. check new 9th contact rewritten is the first;
-2. error handling: numbers, "CTRL + C"
+### C++ Module 01: Memory Allocation and References
 
-C01:
-test ex00:
-1. check numbers
+- **Pointers**: Understanding pointers, pointer arithmetic, and pointer to pointer.
+- **References**: Using references as an alternative to pointers.
+- **Dynamic Memory Allocation**: Using `new` and `delete` for dynamic memory management.
+- **Arrays and Strings**: Handling arrays and C-style strings.
+- **Function Pointers**: Using pointers to functions for callback mechanisms.
 
-Why the difference between Pointer and References?
+### C++ Module 02: Ad-hoc Polymorphism, Operators Overloading, and Orthodox Canonical Form
 
-- Safety:  References provide a safer alternative to pointers because they cannot be null and must be initialized, reducing the risk of null pointer dereferencing.
-- Simplicity:  References are easier to use and understand in many cases, especially for function arguments and return values.
-- Flexibility:  Pointers offer more flexibility, such as the ability to point to different objects and to be used in complex data structures.
+- **Ad-hoc Polymorphism**: Function overloading and operator overloading.
+- **Orthodox Canonical Form**: Implementing constructors, destructors, copy constructors, and assignment operators.
+- **Operator Overloading**: Overloading operators to work with user-defined types.
 
-## WHY POINTERS TO MEMBER FUCNTION ARE ALLOWED INSIDE MAIN:
+### C++ Module 03: Inheritance
 
-Pointers to member functions are allowed inside main (or any other function) because they’re not tied to any instance data of the class. When you define a pointer to a member function, you're only referencing the location of the function in memory, without requiring an instance of the class to do so.
+- **Inheritance**: Understanding base and derived classes.
+- **Access Specifiers**: `public`, `protected`, and `private` inheritance.
+- **Constructors and Destructors**: Order of constructor and destructor calls in inheritance.
+- **Polymorphism**: Using virtual functions to achieve runtime polymorphism.
 
-Here’s a quick breakdown of why a pointer to a member function is allowed inside main, while defining a static member variable is not:
-1. Pointers to Member Functions are Type Definitions, Not Memory Allocations
+### C++ Module 04: Abstract Classes and Interfaces
 
-    When you define a pointer to a member function, such as void (Harl::*funcPtr)(void);, you're merely specifying the type and location of a function within Harl's class structure. You’re not allocating any storage or memory, nor are you associating it with an instance.
-    This is purely a type-safe way to reference the function's address within the Harl class structure.
+- **Abstract Classes**: Defining abstract classes with pure virtual functions.
+- **Interfaces**: Using abstract classes to define interfaces.
+- **Multiple Inheritance**: Handling multiple inheritance and the diamond problem.
+- **Virtual Destructors**: Ensuring proper cleanup of derived class objects.
 
-2. Static Data Members Require Memory Allocation
+### C++ Module 05: Repetition and Exceptions
 
-    A static data member like std::string Harl::name actually requires memory allocation, as it will store data shared across all instances of Harl.
-    Since the compiler needs to know where to place this data in memory, you must define it outside of any function to avoid scope and linkage issues.
-    Placing the definition outside the class (typically in the .cpp file) ensures it has external linkage and a clear memory location.
+- **Exception Handling**: Using `try`, `catch`, and `throw` for error handling.
+- **Standard Exceptions**: Understanding and using standard exception classes.
+- **Custom Exceptions**: Creating and using custom exception classes.
+- **Repetition**: Revisiting and reinforcing previous concepts through practice.
 
-Example: Pointer to Member Function Inside main
+### C++ Module 06: C++ Casts
 
-Here's how you can safely define and use a pointer to a member function of Harl in main:
+- **C++ Casts**: Understanding and using `static_cast`, `dynamic_cast`, `const_cast`, and `reinterpret_cast`.
+- **Type Safety**: Ensuring type safety with C++ casts.
+- **Runtime Type Identification (RTTI)**: Using `typeid` and `dynamic_cast` for type identification.
 
-cpp
+### C++ Module 07: Templates
 
-#include "Harl.h"
+- **Templates**: Understanding function templates and class templates.
+- **Template Specialization**: Using template specialization for specific types.
+- **STL Containers**: Introduction to Standard Template Library (STL) containers like `vector`, `list`, `map`, etc.
+- **Iterators**: Using iterators to traverse STL containers.
 
-int main() {
-    Harl person;
+### C++ Module 08: Templated Containers and Algorithms
 
-    // Define a pointer to member function
-    void (Harl::*funcPtr)() = &Harl::_debug;
+- **Advanced Templates**: Deep dive into advanced template concepts.
+- **Custom Containers**: Implementing custom templated containers.
+- **STL Algorithms**: Using STL algorithms for various operations on containers.
+- **Functors and Lambdas**: Using functors and lambda expressions with STL algorithms.
 
-    // Call the member function through the pointer on an instance of Harl
-    (person.*funcPtr)();
+### C++ Module 09: Memory Management and Smart Pointers
 
-    return 0;
-}
+- **Smart Pointers**: Understanding `unique_ptr`, `shared_ptr`, and `weak_ptr`.
+- **Resource Management**: Using RAII (Resource Acquisition Is Initialization) for resource management.
+- **Memory Leaks**: Identifying and preventing memory leaks.
+- **Garbage Collection**: Understanding the concept of garbage collection in C++.
 
-In this example:
+## Conclusion
 
-    void (Harl::*funcPtr)() is simply a declaration of a pointer to a member function.
-    funcPtr is assigned the address of Harl::_debug, so it "knows" how to reach _debug within any Harl instance.
-    When calling the function, (person.*funcPtr)(), the pointer is used with an instance of Harl (person) to execute _debug() in the context of that specific instance.
-
-This distinction between type reference (for member function pointers) and memory allocation (for static data members) is why the former is allowed in main while the latter is not.
-
-## Polymorphism
-
-there is a base class (example: Animal class)
-i can now create derived classes to the base class (example: class Dog: public Animal )
-now the derived classes can use fucntions of the base class, but the functions have to be "virtual"
+The C++ modules at 42 School provide a comprehensive understanding of C++ programming, from basic syntax to advanced concepts like templates and memory management. These modules are designed to build a strong foundation in C++ and prepare students for real-world software development challenges.
