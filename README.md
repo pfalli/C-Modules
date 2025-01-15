@@ -34,21 +34,21 @@ The C++ modules at 42 School are designed to provide a deep understanding of C++
 - **Inheritance**: Understanding base and derived classes.
 - **Access Specifiers**: `public`, `protected`, and `private` inheritance.
 - **Constructors and Destructors**: Order of constructor and destructor calls in inheritance.
-- **Polymorphism**: Using virtual functions to achieve runtime polymorphism.
+- **Polymorphism**: Using `virtual` functions to achieve runtime polymorphism.
 
 ### C++ Module 04: Abstract Classes and Interfaces
 
-- **Abstract Classes**: Defining abstract classes with pure virtual functions.
+- **Abstract Classes**: Defining abstract classes with `pure virtual functions`.
 - **Interfaces**: Using abstract classes to define interfaces.
-- **Multiple Inheritance**: Handling multiple inheritance and the diamond problem.
+- **Multiple Inheritance**: Handling multiple inheritance and the `diamond` problem.
 - **Virtual Destructors**: Ensuring proper cleanup of derived class objects.
 
 ### C++ Module 05: Repetition and Exceptions
 
 - **Exception Handling**: Using `try`, `catch`, and `throw` for error handling.
-- **Standard Exceptions**: Understanding and using standard exception classes.
-- **Custom Exceptions**: Creating and using custom exception classes.
-- **Repetition**: Revisiting and reinforcing previous concepts through practice.
+- **Standard Exceptions**: Using `std::exception`, `what()`.
+- **Custom Exceptions**: Creating and using custom exception classes (inside derived classes `Robotomy.hpp`).
+- **Acces Specifiers**: Using `friend` method.
 
 ### C++ Module 06: C++ Casts
 
