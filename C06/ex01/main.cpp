@@ -1,27 +1,25 @@
 #include <iostream>
 #include <string>
-#include <cstdint>
+#include <stdint.h> // instead of <cstdint> c++11
 #include "Serializer.hpp"
 
-// i need more tests
 
 int main()
 {
 	Data case1;
-	uintptr_t tmp;
+	case1.num = 10; // 0
+	case1.str = "Piero"; // ""
 
-	case1.num = 10;
-	case1.str = "42Wolfsburg";
+	uintptr_t tmp = Serializer::serialize(&case1);
+	Data *deserialized = Serializer::deserialize(tmp);
 
-	tmp = Serializer::serialize(&case1);
-	Data *case2 = Serializer::deserialize(tmp);
+	std::cout << "Original address: " << &case1 << std::endl;
+    std::cout << "Deserialized address: " << deserialized << " (should be the same)" << std::endl;
+    std::cout << "Original num: " << case1.num << std::endl;
+    std::cout << "Deserialized num: " << deserialized->num << std::endl;
+    std::cout << "Original str: " << case1.str << std::endl;
+    std::cout << "Deserialized str: " << deserialized->str << std::endl;
 
-	std::cout << &case1 << std::endl;
-	std::cout << case2 << std::endl;
-
-	std::cout << case1.num << std::endl;
-	case1.num = 15;
-	std::cout << case1.num << std::endl;
 
 	return (0);
 }

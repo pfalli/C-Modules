@@ -52,11 +52,11 @@ The C++ modules at 42 School are designed to provide a deep understanding of C++
 
 ### C++ Module 06: C++ Casts
 
-- **C++ Casts**: Understanding and using `static_cast`, `dynamic_cast`, `const_cast`, and `reinterpret_cast`.
+- **C++ Casts**: Understanding and using:
 `dynamic_cast` is used for safe downcasting in polymorphic classes, so it checks if the pointer is pointing to a derived class;
-`static_cast` converts the types(example: static_cast<float>(int i));
-`reinterpret_cast` is used for low-level casting between unrelated types.
-- **Type Safety**: Ensuring type safety with C++ casts.
+`static_cast` converts related types(example: static_cast<float>(int i));
+`reinterpret_cast` is used for low-level casting between "unrelated types" (like pointer to int);
+`const_cast` remove the const;
 - **Calling a derived from pointer of Base**: `void identify(Base* p);`
 
 ### C++ Module 07: Templates

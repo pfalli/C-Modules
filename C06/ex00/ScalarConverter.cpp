@@ -90,7 +90,7 @@ void printing(char c, int num, float f, double d, bool is_valid, bool int_limit)
 
 
 void handle_int(int num) {
-    char conv_char = static_cast<char>(num);
+    char conv_char = static_cast<char>(num); // static_cast because are related Types
     float conv_float = static_cast<float>(num);
     double conv_double = static_cast<double>(num);
     printing(conv_char, num, conv_float, conv_double, true, false);

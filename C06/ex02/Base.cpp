@@ -25,7 +25,7 @@ Base * generate(void) {
 }
 
 void identify(Base* p) {
-    if (dynamic_cast<A*>(p))
+    if (dynamic_cast<A*>(p)) // for downcasting in polymorphic classes hierarchy
         std::cout << "The identified type is A" << std::endl;
     else if (dynamic_cast<B*>(p))
         std::cout << "The identified type is B" << std::endl;
