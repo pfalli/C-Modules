@@ -61,8 +61,9 @@ The C++ modules at 42 School are designed to provide a deep understanding of C++
 
 ### C++ Module 07: Templates
 
-- **Templates**: Understanding function templates and class templates.
-- **Template Specialization**: Using template specialization for specific types.
+- **Templates**: allow you to write functions and classes that work with any data type.
+- **Example**: `template <typename T>, class Box {}`: typename is a placeholder for a specific data type;
+- **Template Specialization**: `template <>, class Box<int> {}`, if you instance Box<int> Piero, it accesses the specialized template than the typename Template;
 - **STL Containers**: Introduction to Standard Template Library (STL) containers like `vector`, `list`, `map`, etc.
 - **Iterators**: Using iterators to traverse STL containers.
 
