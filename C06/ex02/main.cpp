@@ -3,10 +3,13 @@
 #include "Base.hpp"
 
 
-int main(){
-    srand(static_cast<unsigned int>(time(0)));
-    int random = rand() % 3;
-    std::cout << random << std::endl;
+int	main()
+{
+	Base *form;
 
-    return 0;
+	form = generate();
+	identify(form);
+	identify(*form);
+	delete form;
+
 }

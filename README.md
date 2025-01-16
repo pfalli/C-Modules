@@ -2,7 +2,7 @@
 
 ## Overview
 
-The C++ modules at 42 School are designed to provide a deep understanding of C++ programming, covering both fundamental and advanced concepts. This README summarizes the key topics and lessons learned throughout the modules.
+The C++ modules at 42 School are designed to provide a deep understanding of C++ programming, covering both fundamental and advanced concepts.
 
 ## Module Summaries
 
@@ -53,8 +53,11 @@ The C++ modules at 42 School are designed to provide a deep understanding of C++
 ### C++ Module 06: C++ Casts
 
 - **C++ Casts**: Understanding and using `static_cast`, `dynamic_cast`, `const_cast`, and `reinterpret_cast`.
+`dynamic_cast` is used for safe downcasting in polymorphic classes, so it checks if the pointer is pointing to a derived class;
+`static_cast` converts the types(example: static_cast<float>(int i));
+`reinterpret_cast` is used for low-level casting between unrelated types.
 - **Type Safety**: Ensuring type safety with C++ casts.
-- **Runtime Type Identification (RTTI)**: Using `typeid` and `dynamic_cast` for type identification.
+- **Calling a derived from pointer of Base**: `void identify(Base* p);`
 
 ### C++ Module 07: Templates
 
@@ -79,4 +82,4 @@ The C++ modules at 42 School are designed to provide a deep understanding of C++
 
 ## Conclusion
 
-The C++ modules at 42 School provide a comprehensive understanding of C++ programming, from basic syntax to advanced concepts like templates and memory management. These modules are designed to build a strong foundation in C++ and prepare students for real-world software development challenges.
+These modules are designed to build a strong foundation in C++ and prepare students for real-world software development challenges.
