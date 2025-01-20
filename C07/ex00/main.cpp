@@ -10,6 +10,7 @@ int main( void ) {
     std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
     std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
 
+    // test it with float
 
     std::string c = "Hello";
     std::string d = "Woo";
