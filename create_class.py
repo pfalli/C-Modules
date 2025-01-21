@@ -29,27 +29,27 @@ class {class_name} {{
     source_content = f"""#include "{class_name}.hpp"
 
 {class_name}::{class_name}() {{
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "{class_name} Default constructor called" << std::endl;
     return ;
 }}
 
 
 {class_name}::{class_name}(const {class_name} &other) {{
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "{class_name} Copy constructor called" << std::endl;
     (void) other;
     return ;
 }}
 
 
 {class_name} &{class_name}::operator=(const {class_name} &other) {{
-    std::cout << "Assignment operator called" << std::endl;
+    std::cout << "{class_name} Assignment operator called" << std::endl;
     (void) other;
     return (*this);
 }}
 
 
 {class_name}::~{class_name}() {{
-    std::cout << "Default destructor called" << std::endl;
+    std::cout << "{class_name} Default destructor called" << std::endl;
     return ;
 }}
 
