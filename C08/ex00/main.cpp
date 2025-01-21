@@ -24,5 +24,21 @@ int main(void) {
 	catch (std::exception &e) {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
+	std::cout << "\n";
+
+	// std::vector<std::string> obj2;
+	// obj2.push_back("hello");
+	// obj2.push_back(" piero");
+	// obj2.push_back(":");
+	// obj2.push_back("  666");
+	// print_vector(obj2);
+
+	// try {
+	// 	easyfind(obj2, "666");
+	// 	std::cout << "Input found!" <<  std::endl;
+	// }
+	// catch (std::exception &e) {
+	// 	std::cout << "Exception: " << e.what() << std::endl;
+	// }
 	return 0;
 }

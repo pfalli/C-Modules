@@ -29,4 +29,13 @@ void easyfind(T &container, int input) {
 	return ;
 }
 
+// template <typename T>
+// void easyfind(T &container, T input) {
+// 	typename T::iterator it = find(container.begin(), container.end(), input); // find it returns the end if it doesn't find the element
+// 	if ( it == container.end()) {
+// 		throw std::out_of_range("Element not found");
+// 	}
+// 	return ;
+// }
+
 #endif // EASYFIND_HPP
