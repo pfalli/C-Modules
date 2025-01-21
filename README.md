@@ -46,6 +46,7 @@ The C++ modules at 42 School are designed to provide a deep understanding of C++
 ### C++ Module 05: Repetition and Exceptions
 
 - **Exception Handling**: Using `try`, `catch`, and `throw` for error handling.
+                        `throw`: `out_of_range(""), logic_error(""), runtime_error("");`
 - **Standard Exceptions**: Using `std::exception`, `what()`.
 - **Custom Exceptions**: Creating and using custom exception classes (inside derived classes `Robotomy.hpp`).
 - **Acces Specifiers**: Using `friend` method.
@@ -68,15 +69,15 @@ The C++ modules at 42 School are designed to provide a deep understanding of C++
                               if you instance Box<int> Piero, it accesses the specialized template than the typename Template;
 - **Class Template**: `template <typename T>,`
                         `Array<T>::Array() {}`.
-- **STL Containers**: Introduction to Standard Template Library (STL) containers like `vector`, `list`, `map`, etc.
-- **Iterators**: Using iterators to traverse STL containers.
 
 ### C++ Module 08: Templated Containers and Algorithms
 
-- **Advanced Templates**: Deep dive into advanced template concepts.
-- **Custom Containers**: Implementing custom templated containers.
-- **STL Algorithms**: Using STL algorithms for various operations on containers.
-- **Functors and Lambdas**: Using functors and lambda expressions with STL algorithms.
+- **STL**: (Standard Template Library) is a collection of container classes, iterators, algorithms, and function objects
+- **Containers**: are data structures used to store collections of elements. (STL) containers like `vector`, `list`, `map`, etc.
+- **Advanced Templates**: 
+- **Custom Containers**: 
+- **STL Algorithms**: 
+- **Functors and Lambdas**: 
 
 ### C++ Module 09: Memory Management and Smart Pointers
 
