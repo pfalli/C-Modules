@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <exception>
 
-// template <typename T>
+// template <typename T> /***MISTAKE***/
 // void easyfind(T &vec, int input) { /****  it should work with any container ******/
 // 	try {
 // 		typename std::vector<T>::iterator i = find(vec.begin(), vec.end(), input);

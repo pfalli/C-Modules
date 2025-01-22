@@ -26,6 +26,11 @@ int main(void) {
 	}
 	std::cout << "\n";
 
+	return 0;
+}
+
+
+
 	// std::vector<std::string> obj2;
 	// obj2.push_back("hello");
 	// obj2.push_back(" piero");
@@ -40,5 +45,3 @@ int main(void) {
 	// catch (std::exception &e) {
 	// 	std::cout << "Exception: " << e.what() << std::endl;
 	// }
-	return 0;
-}

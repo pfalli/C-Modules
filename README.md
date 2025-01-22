@@ -74,8 +74,9 @@ The C++ modules at 42 School are designed to provide a deep understanding of C++
 
 - **STL**: (Standard Template Library) is a collection of container classes, iterators, algorithms, and function objects
 - **Containers**: are data structures used to store collections of elements. (STL) containers like `vector`, `list`, `map`, etc.
-- **Advanced Templates**: 
-- **Custom Containers**: 
+- **Iterators**: used to traverse and manipulate the elements of a container, like "pointer" to the elements of a container: `auto`, `::iterator`;
+You obtain iterators using member functions of the container `.begin()`, `end()`;
+- **Traversing a Container**: `for (std::vector<int>::iterator it = vec.begin(); it != vec.end(); ++it)`.
 - **STL Algorithms**: 
 - **Functors and Lambdas**: 
 
