@@ -77,8 +77,8 @@ The C++ modules at 42 School are designed to provide a deep understanding of C++
 - **Iterators**: used to traverse and manipulate the elements of a container, like "pointer" to the elements of a container: `auto`, `::iterator`;
 You obtain iterators using member functions of the container `.begin()`, `end()`;
 - **Traversing a Container**: `for (std::vector<int>::iterator it = vec.begin(); it != vec.end(); ++it)`.
-- **STL Algorithms**: 
-- **Functors and Lambdas**: 
+- **Container Adaptor**:  `std::stack`:  is a container with Last-In-First-Out (LIFO) not iterable, elements accessible using `top, push, pop`. Instead if you need to iterate through elements, you should use the underlying container (std::vector or std::deque);
+You don’t need direct access to the elements or iteration like vector do.
 
 ### C++ Module 09: Memory Management and Smart Pointers
 
@@ -87,6 +87,3 @@ You obtain iterators using member functions of the container `.begin()`, `end()`
 - **Memory Leaks**: Identifying and preventing memory leaks.
 - **Garbage Collection**: Understanding the concept of garbage collection in C++.
 
-## Conclusion
-
-These modules are designed to build a strong foundation in C++ and prepare students for real-world software development challenges.
