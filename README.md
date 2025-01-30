@@ -2,7 +2,9 @@
 
 ## Overview
 
-The C++ modules at 42 School are designed to provide a deep understanding of C++ programming, covering both fundamental and advanced concepts.
+The C++ modules at 42 School are designed to provide a deep understanding of C++ programming, covering both fundamental and advanced concepts:
+
+Classes, Namespaces, Overloading, “const” and “static” keywords, Inheritance, Dynamic Memory Allocation with “new” and “delete”, Switch Statements, Arrays of Function Pointers (instead of if/else blocks), References, Streams, Exceptions, Templates, Type Casting, Polymorphism, Containers, and Iterators.
 
 ## Module Summaries
 
@@ -82,8 +84,9 @@ You don’t need direct access to the elements or iteration like vector do.
 
 ### C++ Module 09: Memory Management and Smart Pointers
 
-- **Smart Pointers**: Understanding `unique_ptr`, `shared_ptr`, and `weak_ptr`.
-- **Resource Management**: Using RAII (Resource Acquisition Is Initialization) for resource management.
-- **Memory Leaks**: Identifying and preventing memory leaks.
-- **Garbage Collection**: Understanding the concept of garbage collection in C++.
+`std::stringstream` is used to parse a string into individual components
+
+`std::getline` can take an optional third parameter which specifies the delimiter character. By default, std::getline uses the newline character ('\n') as the delimiter, but you can specify a different delimiter if needed.
+
+`std::map<...., ....>`: is using iterator->first, iterator->second;
 

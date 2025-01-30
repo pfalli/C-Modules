@@ -1,7 +1,7 @@
-CC = g++
+CC = c++
 FLAGS = -Wall -Wextra -Werror -g -std=c++98
-TARGET = main
-SRC = main.cpp Base.cpp
+TARGET = btc
+SRC = main.cpp BitcoinExchange.cpp
 OBJS = $(SRC:.cpp=.o)
 
 all: $(TARGET)

@@ -43,8 +43,9 @@ class {class_name} {{
 
 {class_name} &{class_name}::operator=(const {class_name} &other) {{
     std::cout << "{class_name} Assignment operator called" << std::endl;
-    (void) other;
-    return (*this);
+    if (this != &other)
+        this->"" = other."";
+    return *this;
 }}
 
 

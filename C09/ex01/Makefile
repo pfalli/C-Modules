@@ -1,7 +1,7 @@
 CC = g++
 FLAGS = -Wall -Wextra -Werror -g -std=c++98
 TARGET = main
-SRC = main.cpp Base.cpp
+SRC = main.cpp RPN.cpp
 OBJS = $(SRC:.cpp=.o)
 
 all: $(TARGET)
@@ -19,5 +19,7 @@ fclean: clean
 	rm -f $(TARGET)
 
 re : fclean all
+
+
 
 .PHONY: all clean
