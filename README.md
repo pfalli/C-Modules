@@ -90,3 +90,17 @@ You don’t need direct access to the elements or iteration like vector do.
 
 `std::map<...., ....>`: is using iterator->first, iterator->second;
 
+- **Merge-Insert sort algortihm**:
+
+Why is This Efficient?
+
+    Pairs reduce unnecessary comparisons early.
+    The base sequence is sorted optimally.
+    Insertion uses binary search, minimizing the number of comparisons.
+    
+          - It is not commonly used in practice due to its complexity but is significant in 
+            theoretical computer science because it achieves near-optimal comparison efficiency.
+
+          - It is useful in settings where comparisons are very expensive, such as when sorting 
+            elements that require computationally expensive comparisons.
+    

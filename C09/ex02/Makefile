@@ -1,7 +1,7 @@
 CC = g++
 FLAGS = -Wall -Wextra -Werror -g -std=c++98
-TARGET = main
-SRC = main.cpp
+TARGET = PmergeMe
+SRC = main.cpp PmergeMe.cpp
 OBJS = $(SRC:.cpp=.o)
 
 all: $(TARGET)
